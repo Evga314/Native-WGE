@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "id": "native-wge",
+  "version": "${version}",
+  "name": "Native-WGE",
+  "description": "Mod which optimize and improves vanilla noise generation, using native C code",
+  "authors": [],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/native-wge/icon.png",
+  "environment": "server",
+  "entrypoints": {
+    "fabric-datagen": [
+      "com.Evga314.nativeWge.client.NativeWgeDataGenerator"
+    ],
+    "main": [
+      "com.Evga314.nativeWge.NativeWge"
+    ]
+  },
+  "mixins": [
+    "native-wge.mixins.json",
+    {
+      "config": "native-wge.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric-api": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
